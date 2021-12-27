@@ -8,7 +8,6 @@ Spark application that creates a machine learning model for a real-world problem
 
 # Machine Learning Models
 - Linear Regression
-- Random Forest Trees
 
 # How to run
 
