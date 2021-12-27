@@ -39,16 +39,18 @@ object Flight {
                 .cache()
 
     val data2 = rawData
-                .drop("ActualElapsedTime") // Forbidden
-                .drop("ArrTime") // Forbidden
-                .drop("AirTime") // Forbidden
-                .drop("TaxiIn") // Forbidden
-                .drop("Diverted") // Forbidden
-                .drop("CarrierDelay") // Forbidden
-                .drop("WeatherDelay") // Forbidden
-                .drop("NASDelay") // Forbidden
-                .drop("SecurityDelay") // Forbidden
-                .drop("LateAircraftDelay") // Forbidden
+                // Forbidden
+                .drop("ActualElapsedTime")
+                .drop("ArrTime")
+                .drop("AirTime")
+                .drop("TaxiIn")
+                .drop("Diverted")
+                .drop("CarrierDelay")
+                .drop("WeatherDelay")
+                .drop("NASDelay")
+                .drop("SecurityDelay")
+                .drop("LateAircraftDelay")
+
                 .drop("DepDelay") // Casted to double in a new variable called DepDelayDouble
                 .drop("TaxiOut") // Casted to double in a new variable called TaxiOutDouble
                 .drop("UniqueCarrier") // Always the same value // Remove correlated variables
@@ -56,13 +58,16 @@ object Flight {
                 .drop("DepTime") // Highly correlated to CRSDeptime
                 .drop("CRSArrTime") // Highly correlated to CRSDeptime
                 .drop("CRSElapsedTime") // Highly correlated to Distance
-                .drop("Distance") // Remove uncorrelated variables to the arrDelay
-                .drop("FlightNum") // Remove uncorrelated variables to the arrDelay
-                .drop("CRSDepTime") // Remove uncorrelated variables to the arrDelay
-                .drop("Year") // Remove uncorrelated variables to the arrDelay
-                .drop("Month") // Remove uncorrelated variables to the arrDelay
-                .drop("DayofMonth") // Remove uncorrelated variables to the arrDelay
-                .drop("DayOfWeek") // Remove uncorrelated variables to the arrDelay
+
+                // Remove uncorrelated variables to the arrDelay
+                .drop("Distance")
+                .drop("FlightNum")
+                .drop("CRSDepTime")
+                .drop("Year")
+                .drop("Month")
+                .drop("DayofMonth")
+                .drop("DayOfWeek")
+
                 .drop("TailNum")
 
     // remove cancelled flights
@@ -97,8 +102,6 @@ object Flight {
                               }else{
                                 null
                               }
-    
-    
 
     val lr = new LinearRegression()
           .setLabelCol("DelayOutputVar")
