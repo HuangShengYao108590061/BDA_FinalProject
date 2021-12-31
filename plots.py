@@ -34,7 +34,7 @@ pd.set_option('display.max_columns', 19)
 sns.set(style="white")
 sns.set(color_codes=True)
 
-df = pd.read_csv('../flightdelaypredictor/data/2008.csv', sep=",")
+df = pd.read_csv('../predictorOfFlightDelay/data/2008.csv', sep=",")
 
 delCol = ['ArrTime', 'ActualElapsedTime', 'AirTime', 'TaxiIn', 'Diverted', 'CarrierDelay', 
 		'WeatherDelay', 'NASDelay', 'SecurityDelay', 'LateAircraftDelay']
