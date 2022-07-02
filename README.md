@@ -11,7 +11,7 @@ Spark application that creates a machine learning model for a real-world problem
 
 # How to run
 
-Uses the Intellij IDEA 
+Use Intellij IDEA 
 
 ## Install dependencies
 
